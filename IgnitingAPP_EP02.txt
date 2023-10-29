@@ -1,0 +1,85 @@
+NPM 
+npm manages packages 
+does not stand for Node Package Manager
+
+
+package.json is a configuration for NPM packages
+
+Our project requires many dependency and these dependecnies are managed by package.json files with various versions
+
+#Most imp package in our project is Bundler(webpack, Parcel, wheat)
+Bundler - A bundler is a tool that puts together all your JavaScript code and its dependencies and throws a new JavaScript output file with everything merged, ready for the web, commonly known as the bundle file
+
+git init
+
+npm init - will initiliaze npm package in our project
+
+npm install -D (package name)
+-D dev Dependencies - required for development phase 
+Normal dependencies 
+
+difference between ^(charact) and ~(tilde) in package.json
+charact - it will auto update to minor patch versions 2.8.0 to 2.8.3
+tilde - it will auto update to major versions 2.8.0 to 3.0.0
+
+package.json - configuration of npm and keeps a track of all the version of all dependencies installed in the project
+
+package-lock.json - keeps a track of  every version and locks the version.
+=>whatever we have in our local, we can install the modules in production
+
+node modules - it fetch all the code of all dependencies and acts as a database
+
+Transitive dependencies - we installed parcel which required its own dependencies and indirectly parcel dependencies required its own sub dependencies
+
+there are multiple package.json files in pur project 
+1. package.json in our root project directory 
+2. every nodemodules packages has its own package.json files in it 
+
+
+build our app from parcel 
+npx parcel index.html
+
+npx is similar to npm 
+while npm is used to install a package and npx is used to execute a package
+
+=>React CDN LINKs
+its not a recommended way to include react cdn links into our project 
+why => 
+1. as the cdn link makes an external call to another server to fetch react libraries
+2. what if we want to change the version of react, then we have to change the URL of cdn lik as well,
+==> hence it is prefered if we install the react and reactdom modules in the node_modules and easier to manage all the dependencies
+
+install react as a package
+
+# Parcel 
+-dev build 
+-local server 
+-HMR - hot module replacement
+File watching algorithm - written in C++
+Caching - Faster Builds
+Image optimization
+Minification
+Bundling
+Compress your files
+Consistent Hashing
+Code Splitting
+Differential Bundling(supporting multiple/ older browser)
+Diagnostic
+Error Handling
+HTTPs
+Tree shaking(remove unused code for you)
+Different build bundles for dev and prod
+
+
+for local build - npx parcel index.html
+for prod build - npx parcel build index.html
+
+browserlist - https://browserslist.dev/?q=bGFzdCAyIGZpcmVmb3ggdmVyc2lvbnM%3D
+last 2 Chrome version - will make sure the project will definetly work on last 2 versions of chrome
+last 2 Firefox version - will make sure the project will definetly work on last 2 versions of Firefox
+
+we use browserlist for government websites to make sure the site works for older versions as well
+
+we can also use country specific, OS specific
+
+

@@ -1,0 +1,30 @@
+{
+  "name": "namastereact02",
+  "version": "1.0.0",
+  "description": "Namaste React Ep 02",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sarvesh64/namaste-react-02.git"
+  },
+  "author": "Sarvesh Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sarvesh64/namaste-react-02/issues"
+  },
+  "homepage": "https://github.com/Sarvesh64/namaste-react-02#readme",
+  "devDependencies": {
+    "parcel": "^2.10.1",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist":[
+    "last 2 versions"
+  ]
+}
