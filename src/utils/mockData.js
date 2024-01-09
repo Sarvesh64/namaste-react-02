@@ -1,24 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-/**
- * Header
- * - Logo
- * - Nav Items
- * Body
- * - Search
- * - RestaurantContainer
- *   - RestaurantCard
- *      -img
- *      - Name of Res, Star Rating, cuisine, delivery time
- * Footer
- * - Copyrights
- * - Links
- * - Address
- * - Contact
- */
-
-const resData = {
+export const resData = {
     type: "restaurant",
     data: {
       type: "F",
@@ -160,7 +140,7 @@ const resData = {
     subtype: "basic",
   };
 
-const resList = [
+export const resList = [
     {
       type: "restaurant",
       data: {
@@ -2204,84 +2184,3 @@ const resList = [
     },
   ];
 
-const Header = () => {
-    return (
-        <div className="header">
-            <div className = "logo-container">
-                <img 
-                className="logo"
-                src="https://cdn.dribbble.com/users/6259396/screenshots/14473720/media/1eae778854c9c1a22cd9bf68797e571b.png?resize=800x600&vertical=center"/>
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    );
-};
-
-
-
-const styleCard = {
-    backgroundColor:"#f0f0f0"
-}
-const RestaurantCard = (props) => {
-    const {resName} = props;
-
-    const{cloudinaryImageId,name, avgRating, cuisines, costForTwo, deliveryTime} = resName?.data;
-    return(
-        <div className="res-card" style={styleCard}>
-            <img 
-            className="res-logo"
-            alt="res-logo"
-            src={
-          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-          resName.data.cloudinaryImageId
-        }/>
-            <h3>{name}</h3>
-            <h4>{cuisines.join(", ")}</h4>
-            <h4>{avgRating} stars</h4>
-            <h4>₹{costForTwo/100} FOR TWO</h4>
-            <h4>{deliveryTime} minutes</h4>
-        </div>
-    )
-}
-// not using keys( not acceptable) <<<<<< index as key  <<<<<<<<<< unique id(best practice)
-
-const Body = () => {
-    return(
-        <div className="body">
-            <div className="search">
-                Search
-            </div>
-            <div className="res-container">
-                {/* <RestaurantCard resName = {resData}/>
-                <RestaurantCard resName = {resList[2]}/>
-                <RestaurantCard resName = {resList[4]}/>
-                <RestaurantCard resName = {resList[5]}/> */}
-                {
-                    resList.map((restaurant) =>(
-                        <RestaurantCard key = {restaurant.data.id} resName = {restaurant}/>
-                    ))
-                }
-
-            </div>
-        </div>
-    )
-};
-const AppLayout = () => {
-    return (
-        <div className="app">
-            <Header></Header>
-            <Body></Body>
-        </div>
-    )
-}
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(< AppLayout/>);  // render will replace all the child element if exists with the parent html element
-
-//JSX
