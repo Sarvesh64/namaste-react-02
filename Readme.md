@@ -56,6 +56,12 @@ import Component from './path
 - useState() - Super Powerfull State Variables in react
 - useEffect()
 
+    - Two arguments are passed in useEffect
+    1. Callback function
+    2. Dependency
+
+# What is a Hook
+- it is a normal javascript function
 
 # Whenever a state variable changes react will rerender the component 
 
@@ -66,3 +72,10 @@ import Component from './path
 
 github
 acdlite/react-fiber-architecture
+
+# Using Microservices
+ 
+- Seperation of Concerns
+- Single Responsibility Principle
+
+
