@@ -79,3 +79,9 @@ acdlite/react-fiber-architecture
 - Single Responsibility Principle
 
 
+# Episode 6 
+- Optional Chaining
+- Use State
+- updating values in State'
+- Adding Shimmer
+- Conditional Rendering
