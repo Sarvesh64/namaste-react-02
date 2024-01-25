@@ -85,3 +85,20 @@ acdlite/react-fiber-architecture
 - updating values in State'
 - Adding Shimmer
 - Conditional Rendering
+
+# Episode 7
+
+- if no dependency array => useEffect is called on every render
+- if dependency array is empty => useEffect is called on only initial render(just once)
+- if dependency array is [btnNameReact] => useEffect is called everytime btnNameReact is updated
+    
+    -npm i react-router-dom
+
+    - <Link> does not refreshes the whole page it just changes the component
+    - <a href > refreshes the whole page.
+
+    - 2 types of routing in web apps 
+        - Client side routing -> refreshes the whole page only once. 
+        - Server side routing -> page is being fetched from the server such as: switching from index.html to home.html
+
+# Dynamic Routing
