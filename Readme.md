@@ -102,3 +102,41 @@ acdlite/react-fiber-architecture
         - Server side routing -> page is being fetched from the server such as: switching from index.html to home.html
 
 # Dynamic Routing
+
+# Episode 08 
+ -  Class based components - older way of creating components
+
+# Class based components
+ - constructor(props) {
+    super(props);
+  }
+
+  - {this.props.name}
+
+# Function based components
+- const User = (props)
+- {props.name}
+
+- //NEVER UPDATE STATE VARIABLES DIRECTLY
+            //this.state.count = this.state.count + 1;
+
+
+Parent Constructer
+Parent Render
+
+    -First Constructor
+    -First Render
+
+    -Second Constructor
+    -Second Render
+
+    <DOM UpDATED - IN SINGLE BATCH>
+
+    -Fisrt ComponentDidMount
+    -Second ComponentDidMount
+
+-Parent ComponentDidMount
+
+- Difference between Class Component and Function Component
+- React Lifecycle (Mounting, Rendering)
+- ComponentDidMount
