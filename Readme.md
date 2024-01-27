@@ -140,3 +140,12 @@ Parent Render
 - Difference between Class Component and Function Component
 - React Lifecycle (Mounting, Rendering)
 - ComponentDidMount
+
+# Episode 09
+
+- Component Splitting
+- Single Responsibility Component
+- Lazy Loading 
+- Chunking
+- Online Offline status
+- dynamic loading
