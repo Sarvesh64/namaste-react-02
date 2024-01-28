@@ -149,3 +149,40 @@ Parent Render
 - Chunking
 - Online Offline status
 - dynamic loading
+
+
+# Episode 10
+
+- Sass
+- Scss
+
+- styled component
+
+- MUI Material UI
+
+- Installing Tailwind CSS
+npm install -D tailwindcss postcss
+npx tailwindcss init
+
+
+- .postcssrc
+
+{
+  "plugins": {
+    "tailwindcss": {}
+  }
+}
+
+- tailwind.config.js
+
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{html,js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}

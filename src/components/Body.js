@@ -25,11 +25,7 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      RESTAURANTS_LIST_URL
-      //"https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D13.0035068%26lng%3D77.5890953%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING"
-      //"https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.397289&lng=85.398697&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(RESTAURANTS_LIST_URL);
     const json = await data.json();
     console.log(" response " + json?.data?.cards[4]);
     // Optional Chaining
@@ -56,17 +52,18 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex ">
+        <div className="search m-4 p-4">
           <input
             type="text"
-            className="search-box"
+            className="border bg-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
+            className="px-4 py-2 ml-6 bg-purple-600 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50"
             onClick={() => {
               //Filter the restaurant cards and update the UI
               //search text
@@ -80,20 +77,22 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            // Filter Logic here
-            const filteredList = listOfRestaurants.filter(
-              (res) => res?.info?.avgRating > 4
-            );
-            setlistOfRestaurants(filteredList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+         <div className="m-4 p-4 flex item-center"> 
+          <button
+            className="px-4 py-2 bg-gray-100 rounded-lg  hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50"
+            onClick={() => {
+              // Filter Logic here
+              const filteredList = listOfRestaurants.filter(
+                (res) => res?.info?.avgRating > 4
+              );
+              setlistOfFilteredRestaurants(filteredList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {/* <RestaurantCard resName = {resData}/>
                 <RestaurantCard resName = {resList[2]}/>
                 <RestaurantCard resName = {resList[4]}/>

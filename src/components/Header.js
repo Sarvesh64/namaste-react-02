@@ -15,28 +15,32 @@ const Header = () => {
     console.log("useEffect called");
   }, []);
   return (
-    <div className="header">
+    <div className="flex justify-between bg-gray-800 shadow-lg">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL} />
+        <img className="w-32" src={LOGO_URL} />
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>Online Status : {onlineStatus ? "🟢" : "🔴"}</li>
-          <li>
+      <div className="flex items-center">
+        <ul className="flex p-4 m-4">
+          <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+            Online Status : {onlineStatus ? "🟢" : "🔴"}
+          </li>
+          <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
             <Link to="/about">About Us</Link>
           </li>
-          <li>
+          <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>
+          <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li>Cart</li>
+          <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+            Cart
+          </li>
           <button
-            className="login"
+            className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
             onClick={() => {
               btnNameReact === "Login"
                 ? setbtnNameReact("Logout")
